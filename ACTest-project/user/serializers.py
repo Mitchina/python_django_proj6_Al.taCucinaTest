@@ -17,7 +17,24 @@ class UserSerializer(serializers.ModelSerializer):
 		# 'validated_data' will contains all data that was passed into serializer (JSON made in HTTP POST)
 		# We can then use that to create our user
 		return get_user_model().objects.create_user(**validated_data)
+	
+	# instance = model instance that is linked to ModelSerializer
+	# validated_data = fields ready to update
+	def update(self, instance, validated_data):
+		"""Update a user, setting the password correctly and return it"""
 
+		# Remove the password from the validated data
+		password = validated_data.pop('password', None)
+
+		user = super().update(instance, validated_data)
+
+		# If the user provides a password
+		if password:
+			user.set_password(password)
+			user.save()
+
+		return user
+		
 
 class AuthTokenSerializer(serializers.Serializer):
 	"""Serializer for the user authentication object"""
