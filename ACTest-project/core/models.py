@@ -50,3 +50,16 @@ class Tag(models.Model):
 
 	def __str__(self):
 		return self.name
+
+
+class Genre(models.Model):
+	"""Genre to be used in a film"""
+	name = models.CharField(max_length=255)
+	user = models.ForeignKey(
+		settings.AUTH_USER_MODEL,
+		# What to do in the event that the user is removed
+		on_delete=models.CASCADE,
+	)
+
+	def __str__(self):
+		return self.name

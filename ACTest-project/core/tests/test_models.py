@@ -58,3 +58,12 @@ class ModelTests(TestCase):
 
 		# Verify creation of a model called tag
 		self.assertEqual(str(tag), tag.name)
+
+	def test_genre_str(self):
+		"""Test the genre string representation"""
+		genre = models.Genre.objects.create(
+			user=sample_user(),
+			name='Comedy',
+		)
+
+		self.assertEqual(str(genre), genre.name)
