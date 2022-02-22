@@ -71,4 +71,23 @@ class PrivateGenresApiTests(TestCase):
 		# Assert the genre name
 		self.assertEqual(res.data[0]['name'], genre.name)
 
+	def test_create_genre_successfull(self):
+		"""Test create a new genre"""
+		payload = {'name': 'Fantasy'}
+		self.client.post(GENRES_URL, payload)
 
+		# Check that now this genre exists
+		exists = Genre.objects.filter(
+			# Filter anything that is assign to the auth user with the name Fantasy
+			user=self.user,
+			name=payload['name'],
+		).exists()
+
+		self.assertTrue(exists)
+
+	def test_create_genre_invalid(self):
+		"""Test creating invalid genre fails"""
+		payload = {'name': ''}
+		res = self.client.post(GENRES_URL, payload)
+
+		self.assertEqual(res.status_code, status.HTTP_400_BAD_REQUEST)
