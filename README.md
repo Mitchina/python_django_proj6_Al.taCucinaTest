@@ -13,7 +13,7 @@ To run this project, make sure you have Python installed in you PC.
     ```
 - Hit Enter
 
-If Python is installed, you will see its the version details, otherwise you will need to install it. (Jump to STEP 3 if you have Python installed).
+If Python is installed, you will see its the version details, otherwise you will need to install it.
 
 ### 1.2 - Installing Python:
 - Downloading Python 3.10.2 (https://www.python.org/downloads/)
@@ -78,22 +78,39 @@ You are giving the password: ```password``` because it will only be using to you
   ```
 - Hit Enter
  - Do no close the Command Prompt yet, you are going to use it in the next steps.
- 
-### 2.2 - Activate Virtual Environment and install project libraries.
+
+### 2.2 - Be in the right directory (folder).
+Enter inside the top folder of the project.
+- To do that you can just type the code below in your Command Prompt.
+  ```sh
+  cd python_django_proj6_Al.taCucinaTest
+  ```
+- Hit Enter
+- To confirm that you are in the right directory, type ```dir```
+  ```sh
+  dir
+  ```
+- Hit Enter
+
+You now should see both the file Pipfile and Pipfile.lock among the other files of the project.
+
+### 2.3 - Activate Virtual Environment.
 
 - Still inside Command Prompt and inside the project directory, type pipenv shell to created your virtual environment.
   ```sh
   pipenv shell
   ```
 - Hit Enter
-- Then, after launching your virtual environment and still inside Command Prompt, you can type pipenv install to installs the project libraries.
+
+### 2.4 - Install project libraries.
+- Type pipenv install to installs all the project libraries.
     ```sh
   pipenv install
   ```
 - Hit Enter
 - It should install for you all the packages dependencies need for the project.
 
-### 2.3 - Two Must-Know commands.
+### 2.5 - Two Must-Know commands.
 - To see the packages installed, you can use the command pip freeze, while inside your active virtual environment.
   ```sh
   pip freeze
@@ -104,12 +121,12 @@ You are giving the password: ```password``` because it will only be using to you
   ```
 ***
 ## 3.Run the project
-### 3.1 - Be in the right directory (folder).
+### 3.1 - Be in the right directory (folder) again.
 To run the project, you need to be with your Virtual Environment Activated. (If you exit it, just go to your project directory in the Command Prompt and type ```pipenv shell```)
 Once inside again, you need to go to the project folder directory where is located the manage.py file inside the project. 
 - To do that you can just type the code below in your Command Prompt.
   ```sh
-  cd python_django_proj6_Al.taCucinaTest/ACTest-project
+  cd ACTest-project
   ```
 - Hit Enter
 - To confirm that you are in the right directory, type ```dir```
