@@ -63,3 +63,26 @@ class Genre(models.Model):
 
 	def __str__(self):
 		return self.name
+
+class Film(models.Model):
+	"""Film object"""
+	user = models.ForeignKey(
+		settings.AUTH_USER_MODEL,
+		# What to do in the event that the user is removed
+		on_delete=models.CASCADE,
+	)
+	title = models.CharField(max_length=255)
+	time_minutes = models.IntegerField()
+	year = models.IntegerField()
+	
+	have_seen = models.BooleanField(default=False)
+	link = models.CharField(max_length=255, blank=True)
+
+	tags = models.ManyToManyField('Tag')
+	genres = models.ManyToManyField('Genre')
+
+	def __str__(self):
+		return self.title
+
+	class Meta:
+		ordering = ('-id',)

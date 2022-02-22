@@ -7,6 +7,7 @@ from film import views
 router = DefaultRouter()
 router.register('tags', views.TagViewSet)
 router.register('genres', views.GenreViewSet)
+router.register('films', views.FilmViewSet)
 
 app_name = 'film'
 

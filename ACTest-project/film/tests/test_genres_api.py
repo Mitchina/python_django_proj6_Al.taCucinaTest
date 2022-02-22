@@ -11,6 +11,7 @@ from film.serializers import GenreSerializer
 
 GENRES_URL = reverse('film:genre-list')
 
+
 class PublicGenresApiTests(TestCase):
 	"""Test the publicly available genres API"""
 

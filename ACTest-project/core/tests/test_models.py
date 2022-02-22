@@ -10,7 +10,6 @@ def sample_user(email='test@gmail.com', password = 'Testpassword123'):
 	return get_user_model().objects.create_user(email, password)
 
 
-
 class ModelTests(TestCase):
 	"""Testing creating a new user with an email is successful"""
 
@@ -67,3 +66,15 @@ class ModelTests(TestCase):
 		)
 
 		self.assertEqual(str(genre), genre.name)
+
+	def test_film_str(self):
+		"""Test the film string representation"""
+		film = models.Film.objects.create(
+			# required fields
+			user=sample_user(),
+			title='Jumanji the next level',
+			time_minutes=123,
+			year=2019,
+		)
+
+		self.assertEqual(str(film), film.title)
