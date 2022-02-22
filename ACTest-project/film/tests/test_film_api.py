@@ -5,11 +5,28 @@ from django.test import TestCase
 from rest_framework import status
 from rest_framework.test import APIClient
 
-from core.models import Film
+from core.models import Film, Tag, Genre
 
-from film.serializers import FilmSerializer
+from film.serializers import FilmSerializer, FilmDetailSerializer
 
 FILMS_URL = reverse('film:film-list')
+
+
+# /api/film/films/1
+def detail_url(film_id):
+	"""Return film detail URL"""
+	return reverse('film:film-detail', args=[film_id])
+
+
+def sample_tag(user, name='Netflix'):
+	"""Create and return a sample tag"""
+	return Tag.objects.create(user=user, name=name)
+
+
+def sample_genre(user, name='Comedy'):
+	"""Create and return a sample genre"""
+	return Genre.objects.create(user=user, name=name)
+
 
 def sample_film(user, **params):
 	"""Create and return a sample film"""
@@ -91,4 +108,17 @@ class PrivateFilmApiTests(TestCase):
 		self.assertEqual(res.status_code, status.HTTP_200_OK)
 		# Expected just 1 created film for the user
 		self.assertEqual(len(res.data), 1)
+		self.assertEqual(res.data, serializer.data)
+
+	def test_view_film_detail(self):
+		"""Test viewing a film detail"""
+		film = sample_film(user=self.user)
+		film.tags.add(sample_tag(user=self.user))
+		film.genres.add(sample_genre(user=self.user))
+
+		# Generate url
+		url = detail_url(film.id)
+		res = self.client.get(url)
+
+		serializer = FilmDetailSerializer(film)
 		self.assertEqual(res.data, serializer.data)

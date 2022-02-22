@@ -23,6 +23,7 @@ class GenreSerializer(serializers.ModelSerializer):
 
 class FilmSerializer(serializers.ModelSerializer):
 	"""Serializer for film objects"""
+	# PrimaryKeyRelatedField only returning its id
 	tags = serializers.PrimaryKeyRelatedField(
 		many=True,
 		# List the tags with their id
@@ -41,3 +42,11 @@ class FilmSerializer(serializers.ModelSerializer):
 			'have_seen', 'link', 'tags', 'genres',
 		)
 		read_only_fields = ('id',)
+
+
+class FilmDetailSerializer(FilmSerializer):
+	"""Serializer for film detail"""
+	# Overriding tags and genres
+	tags = TagSerializer(many=True, read_only=True)
+	genres = GenreSerializer(many=True, read_only=True)
+

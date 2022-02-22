@@ -39,7 +39,7 @@ class GenreViewSet(BaseFilmAttrViewSet):
 class FilmViewSet(viewsets.ModelViewSet):
 	"""Manage films in the database"""
 
-	queryset = Film.objects.all()
+	queryset = Film.objects.all()	
 	serializer_class = serializers.FilmSerializer
 
 	authentication_classes = (TokenAuthentication, )
@@ -48,4 +48,14 @@ class FilmViewSet(viewsets.ModelViewSet):
 	def get_queryset(self):
 		"""Retrieve the films for the authenticated user"""
 		return self.queryset.filter(user=self.request.user)
+
+	def get_serializer_class(self):
+		"""Return appropriate serializer class"""
+		if self.action == 'retrieve':
+			# When calling the retrieve action, use FilmDetailSerializer
+			return serializers.FilmDetailSerializer
+
+		return self.serializer_class
+
+
 
