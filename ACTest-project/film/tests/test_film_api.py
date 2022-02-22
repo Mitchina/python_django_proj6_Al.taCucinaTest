@@ -180,3 +180,95 @@ class PrivateFilmApiTests(TestCase):
 		self.assertEqual(genres.count(), 2)
 		self.assertIn(genre1, genres)
 		self.assertIn(genre2, genres)
+
+	def test_partial_update_film(self):
+		"""Test updating a film with a patch method"""
+		film = sample_film(user=self.user)
+		film.tags.add(sample_tag(user=self.user))
+		new_tag = sample_tag(user=self.user, name='Disney+')
+
+		# Expected name and tags replaced with 'Replace Title' and new_tag 
+		payload = {
+			'title': 'Replace Sample Title',
+			'tags': [new_tag.id],
+		}		
+
+		# Generate url
+		url = detail_url(film.id)
+		self.client.patch(url, payload)
+
+		film.refresh_from_db()
+		self.assertEqual(film.title, payload['title'])
+
+		tags = film.tags.all()
+		self.assertEqual(len(tags), 1)
+		self.assertIn(new_tag, tags)
+
+	def test_full_update_film(self):
+		"""Test updating a film with a put method"""
+		film = sample_film(user=self.user)
+		film.tags.add(sample_tag(user=self.user))
+		payload = {
+			'title': 'Replace Sample Title',
+			'time_minutes': 112,
+			'year': 2015,
+		}
+		url = detail_url(film.id)
+		self.client.put(url, payload)
+
+		film.refresh_from_db()
+		self.assertEqual(film.title, payload['title'])
+		self.assertEqual(film.time_minutes, payload['time_minutes'])
+		self.assertEqual(film.year, payload['year'])
+
+		# Expected that film has no more tags assigned
+		tags = film.tags.all()
+		self.assertEqual(len(tags), 0)
+
+	def test_filter_films_by_tags(self):
+		"""Test returning films with specific tags"""
+		film1 = sample_film(user=self.user, title='The Revenant')
+		film2 = sample_film(user=self.user, title='Fantastic Four')
+		tag1 = sample_tag(user=self.user, name='Netflix')
+		tag2 = sample_tag(user=self.user, name='Disney+')
+		film1.tags.add(tag1)
+		film2.tags.add(tag2)
+		film3 = sample_film(user=self.user, title='Avengers: Age of Ultron')
+
+		res = self.client.get(
+			FILMS_URL,
+			# Dict of values that you wish to add as get parameters
+			{'tags': f'{tag1.id}, {tag2.id}'}
+		)
+
+		# Serialize films and check if they exist in the res returned
+		serializer1 = FilmSerializer(film1)
+		self.assertIn(serializer1.data, res.data)
+		serializer2 = FilmSerializer(film2)
+		self.assertIn(serializer2.data, res.data)
+		serializer3 = FilmSerializer(film3)
+		self.assertNotIn(serializer3.data, res.data)
+
+	def test_filter_films_by_genres(self):
+		"""Test returning films with specific genres"""
+		film1 = sample_film(user=self.user, title='The Revenant')
+		film2 = sample_film(user=self.user, title='Fantastic Four')
+		genre1 = sample_genre(user=self.user, name='Western')
+		genre2 = sample_genre(user=self.user, name='Action')
+		film1.genres.add(genre1)
+		film2.genres.add(genre2)
+		film3 = sample_film(user=self.user, title='Avengers: Age of Ultron')
+
+		res = self.client.get(
+			FILMS_URL,
+			# Dict of values that you wish to add as get parameters
+			{'genres': f'{genre1.id}, {genre2.id}'}
+		)
+
+		# Serialize films and check if they exist in the res returned
+		serializer1 = FilmSerializer(film1)
+		self.assertIn(serializer1.data, res.data)
+		serializer2 = FilmSerializer(film2)
+		self.assertIn(serializer2.data, res.data)
+		serializer3 = FilmSerializer(film3)
+		self.assertNotIn(serializer3.data, res.data)

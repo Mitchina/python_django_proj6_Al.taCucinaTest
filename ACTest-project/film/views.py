@@ -45,9 +45,30 @@ class FilmViewSet(viewsets.ModelViewSet):
 	authentication_classes = (TokenAuthentication, )
 	permission_classes = (IsAuthenticated, )
 
+	def _params_to_ints(self, qs):
+		"""Convert a list pf string IDs to a list of integers"""
+		return [int(str_id) for str_id in qs.split(',')]
+
 	def get_queryset(self):
 		"""Retrieve the films for the authenticated user"""
-		return self.queryset.filter(user=self.request.user)
+		# Implement filter, retrieving get parameters if provided
+		tags = self.request.query_params.get('tags')
+		genres = self.request.query_params.get('genres')
+		queryset = self.queryset
+
+		if tags: # not null
+			tag_ids = self._params_to_ints(tags)
+			# Using Django syntax for filtering on foreign key
+			# Return all tags where the ID is in this list provided
+			queryset = queryset.filter(tags__id__in=tag_ids)
+		if genres: # not null
+			genre_ids = self._params_to_ints(genres)
+			# Using Django syntax for filtering on foreign key
+			# Return all genres where the ID is in this list provided
+			queryset = queryset.filter(genres__id__in=genre_ids)
+
+		# Limiting objects to the authenticated user
+		return queryset.filter(user=self.request.user)
 
 	def get_serializer_class(self):
 		"""Return appropriate serializer class"""
