@@ -2,6 +2,8 @@ from rest_framework import viewsets, mixins
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 
+from distutils.util import strtobool
+
 from core.models import Tag, Genre, Film
 
 from film import serializers
@@ -49,11 +51,15 @@ class FilmViewSet(viewsets.ModelViewSet):
 		"""Convert a list pf string IDs to a list of integers"""
 		return [int(str_id) for str_id in qs.split(',')]
 
+	def _params_to_bool(self, qs):
+		return bool(strtobool(qs))
+
 	def get_queryset(self):
 		"""Retrieve the films for the authenticated user"""
 		# Implement filter, retrieving get parameters if provided
 		tags = self.request.query_params.get('tags')
 		genres = self.request.query_params.get('genres')
+		have_seen = self.request.query_params.get('have_seen')
 		queryset = self.queryset
 
 		if tags: # not null
@@ -66,6 +72,12 @@ class FilmViewSet(viewsets.ModelViewSet):
 			# Using Django syntax for filtering on foreign key
 			# Return all genres where the ID is in this list provided
 			queryset = queryset.filter(genres__id__in=genre_ids)
+		if have_seen:
+			bool = self._params_to_bool(have_seen)
+			if bool == True:
+				queryset = queryset.filter(have_seen=True)
+			if bool == False:
+				queryset = queryset.filter(have_seen=False)
 
 		# Limiting objects to the authenticated user
 		return queryset.filter(user=self.request.user)

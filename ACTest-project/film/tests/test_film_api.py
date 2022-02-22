@@ -272,3 +272,35 @@ class PrivateFilmApiTests(TestCase):
 		self.assertIn(serializer2.data, res.data)
 		serializer3 = FilmSerializer(film3)
 		self.assertNotIn(serializer3.data, res.data)
+
+	def test_filter_films_by_have_seen(self):
+		"""Test returning films that have been seen"""
+		film1 = sample_film(user=self.user, title='The Revenant', have_seen=True)
+		film2 = sample_film(user=self.user, title='Fantastic Four', have_seen=True)
+		film3 = sample_film(user=self.user, title='Avengers: Age of Ultron', have_seen=False)
+
+		res = self.client.get(FILMS_URL, {'have_seen': 'True'})
+
+		# Serialize films and check if they exist in the res returned
+		serializer1 = FilmSerializer(film1)
+		self.assertIn(serializer1.data, res.data)
+		serializer2 = FilmSerializer(film2)
+		self.assertIn(serializer2.data, res.data)
+		serializer3 = FilmSerializer(film3)
+		self.assertNotIn(serializer3.data, res.data)
+
+	def test_filter_films_by_have_not_seen(self):
+		"""Test returning films that have not been seen"""
+		film1 = sample_film(user=self.user, title='The Revenant', have_seen=True)
+		film2 = sample_film(user=self.user, title='Fantastic Four', have_seen=False)
+		film3 = sample_film(user=self.user, title='Avengers: Age of Ultron', have_seen=False)
+
+		res = self.client.get(FILMS_URL, {'have_seen': 'False'})
+
+		# Serialize films and check if they exist in the res returned
+		serializer1 = FilmSerializer(film1)
+		self.assertNotIn(serializer1.data, res.data)
+		serializer2 = FilmSerializer(film2)
+		self.assertIn(serializer2.data, res.data)
+		serializer3 = FilmSerializer(film3)
+		self.assertIn(serializer3.data, res.data)
