@@ -57,5 +57,10 @@ class FilmViewSet(viewsets.ModelViewSet):
 
 		return self.serializer_class
 
+	# Assign user of the film to the current authenticated user
+	def perform_create(self, serializer):
+		"""Create a new film"""
+		serializer.save(user=self.request.user)
+
 
 

@@ -122,3 +122,61 @@ class PrivateFilmApiTests(TestCase):
 
 		serializer = FilmDetailSerializer(film)
 		self.assertEqual(res.data, serializer.data)
+
+	def test_create_basic_film(self):
+		"""Test creating a film"""
+		payload = {
+			'title': 'The Hunger Games',
+			'time_minutes': 142,
+			'year': 2012,
+		}
+		res = self.client.post(FILMS_URL, payload)
+
+		# 201 for created objs
+		self.assertEqual(res.status_code, status.HTTP_201_CREATED)
+		# Retrieve the created film from our model
+		film = Film.objects.get(id=res.data['id'])
+
+		for key in payload.keys():
+			# Assert that the field in payload same as created film
+			self.assertEqual(payload[key], getattr(film, key))
+
+	def test_create_film_with_tags(self):
+		"""Test creating a film with tags"""
+		tag1 = sample_tag(user=self.user, name='Netflix')
+		tag2 = sample_tag(user=self.user, name='Amazon Prime Video')
+		payload = {
+			'title': 'Interstellar',
+			'time_minutes': 169,
+			'year': 2014,
+			'tags': [tag1.id, tag2.id],
+		}
+		res = self.client.post(FILMS_URL, payload)
+
+		self.assertEqual(res.status_code, status.HTTP_201_CREATED)
+		film = Film.objects.get(id=res.data['id'])
+		tags = film.tags.all()
+
+		self.assertEqual(tags.count(), 2)
+		self.assertIn(tag1, tags)
+		self.assertIn(tag2, tags)
+
+	def test_create_film_with_genres(self):
+		"""Test creating a film with genres"""
+		genre1 = sample_genre(user=self.user, name='Fantasy')
+		genre2 = sample_genre(user=self.user, name='Adventure')
+		payload = {
+			'title': 'Fantastic Beasts: The Crimes of Grindelwald',
+			'time_minutes': 134,
+			'year': 2018,
+			'genres': [genre1.id, genre2.id],
+		}
+		res = self.client.post(FILMS_URL, payload)
+
+		self.assertEqual(res.status_code, status.HTTP_201_CREATED)
+		film = Film.objects.get(id=res.data['id'])
+		genres = film.genres.all()
+
+		self.assertEqual(genres.count(), 2)
+		self.assertIn(genre1, genres)
+		self.assertIn(genre2, genres)
