@@ -94,7 +94,7 @@ https://chrome.google.com/webstore/detail/modheader/idgpnmonknjnojddfkpgkljpfnnf
     ```sh
     git version
     ```
-- If it is installed you are ok to move on. Otherwise, visite its website to understand how to install it in your PC.
+- If it is installed you are ok to move on with the next steps. Otherwise, visit Git website to understand how to install it in your PC.
 https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 
 ### 2.2 - Creating a folder and cloning the project
