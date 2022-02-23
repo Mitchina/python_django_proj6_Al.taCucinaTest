@@ -67,7 +67,7 @@ The password ```password``` is not safe, for now it will be ok since we will onl
 - Right click on the word 'Databases', click on 'Create', and then click on 'Database'.
 
 - Give the database a name of: ```ACTest-project```.
-- Before saving it, go to the 'Security' tab. Click on the plus sign in the 'Privileges' and write in those fields: 
+- Before saving it, go to the 'Security' tab, click on the plus sign in the 'Privileges' and set up the followings: 
 'Grantee' = postgres, 'Privileges' = all, 'Grantor' = postgres.
 - Now you can save the database and close the pgAdmin 4 application.
 
