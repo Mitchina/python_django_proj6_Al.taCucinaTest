@@ -48,7 +48,7 @@ This project uses PostgreSQL as database, so you need to have it installed in yo
 
 ### 1.6 - Installing pgAdmin in your PC:
 This project uses pgAdmin, so you need to have it installed in your PC for the project to works.
-Normally pgAdmin is installed with PostegreSQL, make sure to flag the option to install it at the end of in the PostegreSQL installation proccess.
+Normally pgAdmin is installed with PostegreSQL, make sure to flag the option to install it at the end of the PostegreSQL installation proccess.
 - To check if it has been installed in your PC, you can use the PC search tool, and search for pgAdmin 4 application.
 
 PgAdmin 4 is a web application and works as a browser-based client for PostgreSQL.
