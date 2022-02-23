@@ -181,8 +181,7 @@ Once inside again, you need to go to the project folder directory where is locat
 You now should see the file manage.py among the other files of the project.
 
 
-Before runing the project, confirm that the password set for PostgreSQL root user is: ```password```, eventually if your password is different, go to the setting.py file inside the folder ACTest.
-Path: python_django_project\python_django_proj6_Al.taCucinaTest\ACTest-project\ACTest
+Before runing the project, confirm that the password set for PostgreSQL root user is: ```password```, eventually if your password is different, go to the setting.py file inside the folder python_django_project\python_django_proj6_Al.taCucinaTest\ACTest-project\ACTest
 - In the line 94 of the setting.py file, change the field 'PASSWORD' with your PostgreSQL root user password and save the file.
 
 ### 3.2 - Now you can run the project.
