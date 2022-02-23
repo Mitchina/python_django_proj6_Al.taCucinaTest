@@ -15,7 +15,7 @@ To run this project, make sure you have Python installed in you PC.
 
 If Python is installed, you will see its the version details (jump to step 1.3), otherwise you will need to install it.
 
-### 1.2 - Installing Python:
+### 1.2 - Install Python:
 - Download and Install Python 3.10.2, follow the instruction on their website (https://www.python.org/downloads/)
 - Remember to Add Python to the PATH Environmental Variable.
 - Repeat STEP 1 to confirm that Python has been installed.
@@ -30,7 +30,7 @@ If Python is installed, you will see its the version details (jump to step 1.3),
 
 You should see the pip version details installed with Python.
 
-### 1.4 - Installing Pipenv (a virtual environment):
+### 1.4 - Install Pipenv (a virtual environment):
 We are going to use a virtual environment for this Python project. Pipenv is a dependency manager for Python projects, you can simply install it by typing in your Command Prompt:
     ```
     pip install pipenv
@@ -42,11 +42,11 @@ We are going to use a virtual environment for this Python project. Pipenv is a d
     ```
 - Hit Enter
 
-### 1.5 - Installing PostgreSQL in your PC:
+### 1.5 - Install PostgreSQL in your PC:
 This project uses PostgreSQL as database, so you need to have it installed in your PC in order to the project works.
 - Download and Install PostgreSQL 14.2, follow the instruction on their website (https://www.postgresql.org/).
 
-### 1.6 - Installing pgAdmin in your PC:
+### 1.6 - Install pgAdmin in your PC:
 This project uses pgAdmin, so you need to have it installed in your PC for the project to works.
 PgAdmin 4 is a web application and works as a browser-based client for PostgreSQL.
 Normally pgAdmin is installed with PostegreSQL, make sure to flag the option to install it at the end of the PostegreSQL installation proccess.
