@@ -45,7 +45,7 @@ We are going to use a virtual environment for this Python project. Pipenv is a d
 ### 1.5 - Install PostgreSQL in your PC:
 This project uses PostgreSQL as database, so you need to have it installed in your PC in order to the project works.
 - Download and Install PostgreSQL 14.2, follow the instruction on their website (https://www.postgresql.org/).
-- During the installation give it the password: ```password```.
+- During the installation give the root user the password: ```password```.
 
 ### 1.6 - Install pgAdmin in your PC:
 This project uses pgAdmin, so you need to have it installed in your PC for the project to works.
