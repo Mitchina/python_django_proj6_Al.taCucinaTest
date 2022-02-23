@@ -64,7 +64,7 @@ The password ```password``` is not safe, for now it will be ok since we will onl
 
 ### 1.8 - Create the project database.
 - After you gave the password, you can access 'Servers' tab and you should be able to see the name 'Databases' inside the sub tab 'PostgreSQL'.
-- Right click on the word 'Databases', and click on 'Create', and then 'Database'.
+- Right click on the word 'Databases', click on 'Create', and then click on 'Database'.
 
 You are now creating a database that is going to be used for the project to save all of its models.
 - Give the database a name of: ```ACTest-project```.
