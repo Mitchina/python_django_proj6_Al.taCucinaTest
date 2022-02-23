@@ -48,11 +48,10 @@ This project uses PostgreSQL as database, so you need to have it installed in yo
 
 ### 1.6 - Installing pgAdmin in your PC:
 This project uses pgAdmin, so you need to have it installed in your PC for the project to works.
+PgAdmin 4 is a web application and works as a browser-based client for PostgreSQL.
 Normally pgAdmin is installed with PostegreSQL, make sure to flag the option to install it at the end of the PostegreSQL installation proccess.
 - To check if it has been installed in your PC, search for pgAdmin 4 application with the PC search tool.
-
-PgAdmin 4 is a web application and works as a browser-based client for PostgreSQL.
-- You can also install it from the website, https://www.pgadmin.org/.
+If PostgreSQL does not installed it with its packages, you can also install it from the website, https://www.pgadmin.org/.
 
 ### 1.7 - Give a password for PostgreSQL and for pgAdmin:
 - Open the pgAdmin 4 application giving it the password: ```password```
