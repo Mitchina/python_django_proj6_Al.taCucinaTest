@@ -138,7 +138,7 @@ You now should see both the file Pipfile and Pipfile.lock among the other files 
 
 ### 2.4 - Activate Virtual Environment.
 
-- Still inside Command Prompt and inside the project directory, type pipenv shell to created your virtual environment.
+- Still inside Command Prompt and inside the project directory, type pipenv shell to create your virtual environment.
   ```sh
   pipenv shell
   ```
@@ -157,14 +157,15 @@ You now should see both the file Pipfile and Pipfile.lock among the other files 
   ```sh
   pip freeze
   ```
-- To exit you virtual environment, you can type exit.
+- Do not exit right now, but to exit you virtual environment, you can type exit.
   ```sh
   exit
   ```
 ***
 ## 3.Run the project
 ### 3.1 - Be in the right directory (folder) again.
-To run the project, you need to be with your Virtual Environment Activated. (If you exit it, just go to your project directory in the Command Prompt and type ```pipenv shell```)
+To run the project, you need to be with your Virtual Environment Activated. (If you exit it, just go to your project directory in the Command Prompt and type ```pipenv shell```).
+
 Once inside again, you need to go to the project folder directory where is located the manage.py file inside the project. 
 - To do that you can just type the code below in your Command Prompt.
   ```sh
@@ -178,6 +179,10 @@ Once inside again, you need to go to the project folder directory where is locat
 - Hit Enter
 
 You now should see the file manage.py among the other files of the project.
+
+
+Before runing the project, confirm that the password set for PostgreSQL root user is: ```password```, eventually if your password is different, go at the file setting.py inside the folder ACTest.
+And in line 94, change the field 'APSSWORD': with your PostgreSQL password.
 
 ### 3.2 - Now you can run the project.
 - Run the full command below:
