@@ -78,7 +78,8 @@ The password ```password``` is not safe, for now it will be ok since we will onl
 We are going to use a Chrome extension called: ```mod header```.
 It allows you to modify the headers of the requests that you make, so it makes really easy to simulate and test authentication with the API.
 
-- You can add the extension by searching it by its name in the google extensions webstore: https://chrome.google.com/webstore/category/extensions
+- Open the web browser Google Chrome.
+- Add the extension by searching it by its name in the google extensions webstore: https://chrome.google.com/webstore/category/extensions
 - Or simply opening the full link below: 
 https://chrome.google.com/webstore/detail/modheader/idgpnmonknjnojddfkpgkljpfnnfcklj?gclid=Cj0KCQiA09eQBhCxARIsAAYRiymLnLv_RFeW1iludwVoXBI1N7kJNOGXDHayZrBI0Z8hpi8fhHaYNTwaAnIrEALw_wcB
 
