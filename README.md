@@ -109,7 +109,12 @@ https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 - Hit Enter
 - Do no close the Command Prompt. 
 - Now that you are inside that new created folder directory, clone the project.
-- Clone the project HTTPS key or SSH key.
+- Clone the project with HTTPS key or SSH key. If you have a SSH key associated with your account, jump to step (2.2.2).
+#### 2.2.1 - Cloning with HTTPS key
+  ```sh
+  git clone https://github.com/Mitchina/python_django_proj6_Al.taCucinaTest.git
+  ```
+#### 2.2.2 - Cloning with SSH key
   ```sh
   git clone git@github.com:Mitchina/python_django_proj6_Al.taCucinaTest.git
   ```
