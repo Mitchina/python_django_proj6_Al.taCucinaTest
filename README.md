@@ -73,7 +73,7 @@ The password ```password``` is not safe, for now it will be ok since we will onl
 
 ### 1.9 - Add an extension to your web browser Google Chrome.
 
-- If you do not have Google Chrome installed in you PC, you can install it by the link: https://www.google.com/chrome/
+- If you do not have the web browser Google Chrome installed in you PC, download and install it. You can find the download at: https://www.google.com/chrome/
  
 We are going to use a Chrome extension called: ```mod header```.
 It allows you to modify the headers of the requests that you make, so it makes really easy to simulate and test authentication with the API.
