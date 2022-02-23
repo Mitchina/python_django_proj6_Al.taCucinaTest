@@ -54,11 +54,11 @@ Normally pgAdmin is installed with PostegreSQL, make sure to flag the option to 
 - To check if it has been installed in your PC, search for pgAdmin 4 application with the PC search tool.
 If PostgreSQL has not installed pgAdmin within its packages, you can also install it from the website, https://www.pgadmin.org/.
 
-### 1.7 - Give a password for PostgreSQL and for pgAdmin:
+### 1.7 - Give a password for pgAdmin:
 - Open the pgAdmin 4 application and give it the password: ```password```
 - Once inside, on the left side of the page, click in 'Servers'.
 - You will be asked to type again a password, with the message: "Please enter the password for the user 'postgres' to connect the server - "PostgreSQL 14".
-- Use the password that you gave in the PostgreSQL installation proccess, that should be ```password``` if you follow this instructions.
+- Use the password that you gave in the PostgreSQL installation proccess, if you follow this instructions, the password should be ```password```.
 
 You are giving the simple password: ```password``` because it will only be using to your localhost server.
 
