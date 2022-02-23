@@ -63,7 +63,7 @@ If PostgreSQL has not installed pgAdmin within its packages, you can also instal
 The password ```password``` is not safe, for now it will be ok since we will only use pgAdmin in a localhost server.
 
 ### 1.8 - Create the project database.
-- After you gave the password you can access 'Servers' you should able to see inside 'PostgreSQL' and the name 'Databases'.
+- After you gave the password you can access 'Servers' and you should able to see inside 'PostgreSQL' the name 'Databases'.
 - Right click on the word 'Databases', and click on 'Create', and then 'Database'.
 
 You are now creating a database that is going to be used for the project to save all of its models.
