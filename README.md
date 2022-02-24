@@ -261,8 +261,8 @@ Choose the tab 'HTML form'. We are going to create 3 different Tags as an exampl
 
 - Give the first Tag name for a film, example:
 - Type ```Netflix```, and hit the POST button.
-- Erase the Netflix name and type ```Disney+```, hit the POST button.
-- Now, erase the Disney+ name and type ```Amazon Prime Video```, hit the POST button.
+- Erase Netflix from the input field and type ```Disney+```, hit the POST button.
+- Now, erase Disney+ from the input field and type ```Amazon Prime Video```, hit the POST button.
 
 If you open the http://127.0.0.1:8000/api/film/tags/ again, you can see a list of your created tags.
 
@@ -274,8 +274,8 @@ Choose the tab 'HTML form'. We are going to create 3 different Genres as an exam
 
 - Give the first Genre name for a film, example:
 - Type ```Action```, and hit the POST button.
-- Erase the Action name and type ```Drama```, hit the POST button.
-- Now, erase the Drama name and type ```Comedy```, hit the POST button.
+- Erase Action from the input field and type ```Drama```, hit the POST button.
+- Now, erase Drama from the input field and type ```Comedy```, hit the POST button.
 
 If you open the http://127.0.0.1:8000/api/film/genres/ again, you can see a list of your created genres.
 
@@ -327,18 +327,18 @@ You can filter your list of films by its Tags, Genres, or even for films that yo
 
 #### 5.5.1 - Filtering by Tag.
 So to filter a film by its tag, you will need to know the tags ids that are associated with your films tags.
-For example, if Netflix has tag number 8, you can search for Netflix films adding the '?tags=8' at the end of your films list link.
+For example, if Netflix has tag number 1, you can search for Netflix films adding the '?tags=1' at the end of your films list link.
 
 -- Filtering films with Netflix tags:
-http://127.0.0.1:8000/api/film/films/?tags=8
+http://127.0.0.1:8000/api/film/films/?tags=1
 -- You will get the films: "The Pianist" and "The Hunger Games".
 
 #### 5.5.2 - Filtering by Genre.
 To filter a film by its genres, you will need to know the genres ids that are associated with your films genres.
-For example, if Action has genre number 11, you can search for Action films adding the '?genres=11' at the end of your films list link.
+For example, if Action has genre number 1, you can search for Action films adding the '?genres=1' at the end of your films list link.
 
 -- Filtering films with Action genres:
-http://127.0.0.1:8000/api/film/films/?genres=11
+http://127.0.0.1:8000/api/film/films/?genres=1
 -- You will get the film: "School of Rock".
 
 #### 5.5.3 - Filtering by Have Seen Flag.
