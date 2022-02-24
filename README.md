@@ -204,7 +204,7 @@ http://127.0.0.1:8000/api/user/create/
 - Move on to the endpoint:
 http://127.0.0.1:8000/api/user/token/
 
-- Give the Email and Password that you used to register yourself, in the step before (4.1).
+- Give the Email and Password that you used to register yourself, in the step before (4.).
 
 - Once you hit the POST button, you should see your Token in the page, like in the example below:
 {
