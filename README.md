@@ -240,7 +240,7 @@ You can change your credentials using the method PATCH or PUT, but with the PUT 
 password field.
 To change with using the method PATCH, switch to the tag 'Raw data', and update the fields you want inside the 'Content' field, clicking then the button PATCH.
 
-- If you changed the password and want to verify that it has changed in the database, just try to access your token again with your new password http://127.0.0.1:8000/api/user/token.
+- If you changed the password and want to verify that it has changed in the database, just try to access your token again (http://127.0.0.1:8000/api/user/token) with your new password. 
 - You can go then to http://127.0.0.1:8000/api/user/me, to see the other changes as well.
 
 
