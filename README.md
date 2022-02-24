@@ -361,7 +361,7 @@ http://127.0.0.1:8000/api/film/films/?have_seen=True
 - The intention was to build a fully functioning back-end REST API with Django rest framework.
 - It does not have an interface, just the back-end endpoints.
 - The project was created using a test-driven development.
-- To run your tests, exit the application by pressing Ctrl+C on your Command Prompt. And run the command below:
+- To run the tests, exit the application by pressing Ctrl+C on your Command Prompt, and run the command below:
 ```sh
 python manage.py test
 ```
