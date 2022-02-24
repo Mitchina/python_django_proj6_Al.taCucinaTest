@@ -217,8 +217,8 @@ http://127.0.0.1:8000/api/user/token/
 
 Inside the extension window, you will see a Name field and a Value field.
 - Type 'Authorization' in the Name field.
-- In the Value field you should write 'Token', with capital T, then add a space and paste your token copied from the
-step before (4.2).
+- In the Value field you should write 'Token', with capital T and paste your token copied from the
+step before (4.2) separated from a blank space.
 
 It should be like in the ```example``` below:
 
