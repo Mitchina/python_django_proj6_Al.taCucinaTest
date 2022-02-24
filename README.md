@@ -348,12 +348,20 @@ To filter films of your list that you have not seen yet, you just need add '?hav
 
 - Filtering films that you have not seen yet:
 http://127.0.0.1:8000/api/film/films/?have_seen=False
-
 - You will get the film: "The Pianist".
+
+- Filtering films that you have seen:
+http://127.0.0.1:8000/api/film/films/?have_seen=True
+- You will get the films: "School of Rock" and "The Hunger Games".
+
 
 
 ## 6. About this project.
 - This project was created for a BackEnd Developer Test held by the company Al.ta Cucina.
-- Where the intention was to build a fully functioning back-end REST API with Django rest framework.
+- The intention was to build a fully functioning back-end REST API with Django rest framework.
 - It does not have an interface, just the back-end endpoints.
 - The project was created using a test-driven development.
+- To run your tests, exit the application by pressing Ctrl+C on your Command Prompt. And run the command below:
+```sh
+python manage.py test
+```
