@@ -329,24 +329,27 @@ You can filter your list of films by its Tags, Genres, or even for films that yo
 So to filter a film by its tag, you will need to know the tags ids that are associated with your films tags.
 For example, if Netflix has tag number 1, you can search for Netflix films adding the '?tags=1' at the end of your films list link.
 
--- Filtering films with Netflix tags:
+- Filtering films with Netflix tags:
 http://127.0.0.1:8000/api/film/films/?tags=1
--- You will get the films: "The Pianist" and "The Hunger Games".
+
+- You will get the films: "The Pianist" and "The Hunger Games".
 
 #### 5.5.2 - Filtering by Genre.
 To filter a film by its genres, you will need to know the genres ids that are associated with your films genres.
 For example, if Action has genre number 1, you can search for Action films adding the '?genres=1' at the end of your films list link.
 
--- Filtering films with Action genres:
+- Filtering films with Action genres:
 http://127.0.0.1:8000/api/film/films/?genres=1
--- You will get the film: "School of Rock".
+
+- You will get the film: "School of Rock".
 
 #### 5.5.3 - Filtering by Have Seen Flag.
 To filter films of your list that you have not seen yet, you just need add '?have_seen=False' at the end of your films list link.
 
--- Filtering films that you have not seen yet:
+- Filtering films that you have not seen yet:
 http://127.0.0.1:8000/api/film/films/?have_seen=False
--- You will get the film: "The Pianist".
+
+- You will get the film: "The Pianist".
 
 
 ## 6. About this project.
