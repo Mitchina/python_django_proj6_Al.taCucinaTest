@@ -339,6 +339,7 @@ To filter a film by its genres, you will need to know the genres ids that are as
 For example, if Action has genre number 1, you can search for Action films adding the '?genres=1' at the end of your films list link.
 
 - Filtering films with Action genres:
+
 http://127.0.0.1:8000/api/film/films/?genres=1
 
 - You will get the film: "School of Rock".
@@ -347,13 +348,34 @@ http://127.0.0.1:8000/api/film/films/?genres=1
 To filter films of your list that you have not seen yet, you just need add '?have_seen=False' at the end of your films list link.
 
 - Filtering films that you have not seen yet:
+
 http://127.0.0.1:8000/api/film/films/?have_seen=False
+
 - You will get the film: "The Pianist".
 
 - Filtering films that you have seen:
+
 http://127.0.0.1:8000/api/film/films/?have_seen=True
+
 - You will get the films: "School of Rock" and "The Hunger Games".
 
+#### 5.5.4 - Filtering by Tag, Genre and Have Seen Flag.
+Now that you know how to add a film to your list, you can add as many films as you want.
+So, if you have a large list of films, it is easier to find a film using all of parameters above.
+
+Example one:
+- To filter films from the tag 'Netflix', genre 'Drama' and films that you have not seen yet, add '?tags=1&&genres=2&&have_seen=False' at the end of your films list link.
+
+http://127.0.0.1:8000/api/film/films/?tags=1&&genres=2&&have_seen=False
+
+You will get the film: "The Pianist", for example.
+
+Example two:
+- To filter films from the tag 'Netflix', genre 'Action' and films that you have already seen, add '?tags=1&&genres=1&&have_seen=True' at the end of your films list link.
+
+http://127.0.0.1:8000/api/film/films/?tags=1&&genres=1&&have_seen=True
+
+You will get the film: "The Hunger Games".
 
 
 ## 6. About this project.
