@@ -364,14 +364,14 @@ Now that you know how to add a film to your list, you can add as many films as y
 So, if you have a large list of films, it is easier to find a film using all of parameters above.
 
 Example one:
-- To filter films from the tag 'Netflix', genre 'Drama' and films that you have not seen yet, add '?tags=1&&genres=2&&have_seen=False' at the end of your films list link.
+- To filter films with the tag 'Netflix', genre 'Drama' and not seen yet flag, add '?tags=1&&genres=2&&have_seen=False' at the end of your films list link.
 
 http://127.0.0.1:8000/api/film/films/?tags=1&&genres=2&&have_seen=False
 
 You will get the film: "The Pianist", for example.
 
 Example two:
-- To filter films from the tag 'Netflix', genre 'Action' and films that you have already seen, add '?tags=1&&genres=1&&have_seen=True' at the end of your films list link.
+- To filter films with the tag 'Netflix', genre 'Action' and films that you have already seen, add '?tags=1&&genres=1&&have_seen=True' at the end of your films list link.
 
 http://127.0.0.1:8000/api/film/films/?tags=1&&genres=1&&have_seen=True
 
