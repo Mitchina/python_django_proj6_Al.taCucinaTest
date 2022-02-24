@@ -13,7 +13,7 @@ To run this project, make sure you have Python installed in you PC.
     ```
 - Hit Enter
 
-If Python is installed, you will see its the version details (jump to step 1.3), otherwise you will need to install it.
+If Python is installed, you will see its version details (jump to step 1.3), otherwise you will need to install it.
 
 ### 1.2 - Install Python:
 - Download and Install Python 3.10.2, follow the instruction on their website (https://www.python.org/downloads/)
@@ -236,6 +236,7 @@ Now you are an authorized user.
 http://127.0.0.1:8000/api/user/me
 
 If you do not want to change your credentials, jump to the step 5.
+
 You can change your credentials using the method PATCH or PUT, but with the PUT you are going to have to provide all the fields and that includes the 
 password field.
 To change with using the method PATCH, switch to the tag 'Raw data', and update the fields you want inside the 'Content' field, clicking then the button PATCH.
@@ -284,6 +285,7 @@ If you open the http://127.0.0.1:8000/api/film/genres/ again, you can see a list
 http://127.0.0.1:8000/api/film/films/
 
 Choose the tab 'HTML form'. We are going to create 3 different Films as an example.
+
 The required fields for a film are: Title, Time in minutes and released Year. The other fields are optional.
 
 - Creating first example of film:
