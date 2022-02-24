@@ -60,7 +60,7 @@ If PostgreSQL has not installed pgAdmin within its packages, you can also instal
 - You will be asked to type again a password with the message: "Please enter the password for the user 'postgres' to connect the server - PostgreSQL 14."
 - Use the password that you gave in the PostgreSQL installation proccess, if you followed the instructions on the step 1.5, the PostgreSQL password should also be ```password```.
 
-The password ```password``` is not safe, for now it will be ok since we will only use pgAdmin in a localhost server.
+The password 'password' is not safe, for now it will be ok since we will only use pgAdmin in a localhost server.
 
 ### 1.8 - Create the project database.
 - After you gave the password, you can access 'Servers' tab and you should be able to see the name 'Databases' inside the sub tab 'PostgreSQL'.
