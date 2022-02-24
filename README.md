@@ -181,8 +181,8 @@ Once inside again, you need to go to the project folder directory where is locat
 You now should see the file manage.py among the other files of the project.
 
 
-Before runing the project, confirm that the password set for PostgreSQL root user is: ```password```, eventually if your password is different, go to the setting.py file inside the folder python_django_project\python_django_proj6_Al.taCucinaTest\ACTest-project\ACTest
-- In the line 94 of the setting.py file, change the field 'PASSWORD' with your PostgreSQL root user password and save the file.
+Before runing the project, confirm that the password set for PostgreSQL root user is: ```password```, eventually if your password is different, go to the setting.py file inside the folder: python_django_project\python_django_proj6_Al.taCucinaTest\ACTest-project\ACTest. 
+In the line 94 of the setting.py file, change the field 'PASSWORD' with your PostgreSQL root user password and save the file.
 
 ### 3.2 - Now you can run the project.
 - Run the full command below:
@@ -195,12 +195,11 @@ python manage.py wait_for_db && python manage.py migrate && python manage.py run
 - Access the endpoint: 
 http://127.0.0.1:8000/api/user/create/
 
-### 4.1 - Put your credentials to register
+- Put your credentials to register
 - Register with an Email, Password and Name.
 - Hit the POST button
 
-
-### 4.2 - To provide the server the Authentication credentials, get your token.
+### 4.1 - To provide the server the Authentication credentials, get your token.
 - To be an authorized user, you need to be authenticated by a Token.
 - Move on to the endpoint:
 http://127.0.0.1:8000/api/user/token/
@@ -213,30 +212,31 @@ http://127.0.0.1:8000/api/user/token/
 }
 - Copy your token key.
 
-### 4.3 - Open 'mod header' Chrome extension
+### 4.2 - Open 'mod header' Chrome extension
 - Head over to 'mod header' extension in your Chrome.
 
 Inside the extension window, you will see a Name field and a Value field.
-- Choose 'Authorization' for the Name field.
-- In the Value field you should write 'Token', with capital T, space and paste your token copied from the
+- Type 'Authorization' in the Name field.
+- In the Value field you should write 'Token', with capital T, then add a space and paste your token copied from the
 step before (4.2).
 
-It should be like in the example below:
+It should be like in the ```example``` below:
 
 ```sh 
-        Authorization                       Token fd3be064346d0d8b8ce43d8a6d1dadcf4ad6ba6
+        Authorization                  Token fd3be064346d0d8b8ce43d8a6d1dadcf4ad6ba6
 ```	
 - Once given the information, click on the white space of the window to deselect the fields.
 - Click on the Browser page to close the extension window.
 
 Now you are an authorized user.
 
-### 4.4 - To update or change your credentials
+### 4.3 - To update or change your credentials
 - You can also change your email, password and name.
 - To do that, access the endpoint: 
 http://127.0.0.1:8000/api/user/me
 
-You can change them using the method PATCH or PUT, but with the PUT you are going to have to provide all the fields and that includes the 
+If you do not want to change your credentials, jump to the step 5.
+You can change your credentials using the method PATCH or PUT, but with the PUT you are going to have to provide all the fields and that includes the 
 password field.
 To change with using the method PATCH, switch to the tag 'Raw data', and update the fields you want inside the 'Content' field, clicking then the button PATCH.
 
@@ -352,4 +352,5 @@ http://127.0.0.1:8000/api/film/films/?have_seen=False
 ## 6. About this project.
 - This project was created for a BackEnd Developer Test held by the company Al.ta Cucina.
 - Where the intention was to build a fully functioning back-end REST API with Django rest framework.
+- It does not have an interface, just the back-end endpoints.
 - The project was created using a test-driven development.
